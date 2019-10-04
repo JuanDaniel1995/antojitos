@@ -1,11 +1,24 @@
 {
   "name": "antojitos",
   "version": "1.0.0",
+  "engines": {
+    "node": "10.16.0",
+    "npm": "6.9.0"
+  },
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server": "nodemon server.js",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\"",
+    "start": "node server.js"
   },
   "author": "Juan Daniel Vargas Cordero",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^4.1.2"
+  },
+  "dependencies": {
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1"
+  }
 }
