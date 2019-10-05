@@ -18,21 +18,32 @@ module.exports = {
       }
     };
     const responses = await sessionClient.detectIntent(request);
-    const { fulfillmentMessages } = responses[0].queryResult;
-    return fulfillmentMessages;
+    const {
+      fulfillmentMessages,
+      intent,
+      parameter,
+      parameters
+    } = responses[0].queryResult;
+    const { displayName } = intent;
+    return { fulfillmentMessages, displayName, parameters };
   },
-  eventQuery: async function(event) {
+  eventQuery: async function(e) {
     const request = {
       session: sessionPath,
       queryInput: {
         event: {
-          name: event,
+          name: e,
           languageCode: "es-ES"
         }
       }
     };
     const responses = await sessionClient.detectIntent(request);
-    const { fulfillmentMessages } = responses[0].queryResult;
-    return fulfillmentMessages;
+    const {
+      fulfillmentMessages,
+      intent,
+      parameters
+    } = responses[0].queryResult;
+    const { displayName } = intent;
+    return { fulfillmentMessages, displayName, parameters };
   }
 };
