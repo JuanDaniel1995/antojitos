@@ -8,9 +8,9 @@
   "description": "Chatbot for ordering food from popular messaging apps such as telegram and whatsapp",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon server.js",
+    "server": "nodemon index.js",
     "dev": "concurrently --kill-others-on-fail \"npm run server\"",
-    "start": "node server.js"
+    "start": "node index.js"
   },
   "author": "Juan Daniel Vargas Cordero",
   "license": "ISC",
