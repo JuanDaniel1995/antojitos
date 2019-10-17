@@ -1,6 +1,6 @@
 
-# Created by https://www.gitignore.io/api/git,node
-# Edit at https://www.gitignore.io/?templates=git,node
+# Created by https://www.gitignore.io/api/git,node,react
+# Edit at https://www.gitignore.io/?templates=git,node,react
 
 ### Git ###
 # Created by git for backups. To disable backups in Git:
@@ -110,4 +110,18 @@ public/
 # DynamoDB Local files
 .dynamodb/
 
-# End of https://www.gitignore.io/api/git,node
+### react ###
+.DS_*
+**/*.backup.*
+**/*.back.*
+
+client/node_modules
+client/bower_componets
+
+*.sublime*
+
+psd
+thumb
+sketch
+
+# End of https://www.gitignore.io/api/git,node,react
