@@ -1,0 +1,24 @@
+.header {
+  height: 5vw;
+  width: 100vw;
+
+  .options {
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .option {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    font-size: 10px;
+    align-items: center;
+    justify-content: center;
+
+    .shopping-icon {
+      height: 80%;
+    }
+  }
+}
