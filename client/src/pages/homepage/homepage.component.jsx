@@ -11,6 +11,7 @@ const HomePage = () => (
     <p className="paragraph">Encuentranos en</p>
     <a
       target="_blank"
+      rel="noopener noreferrer"
       className="paragraph"
       href="https://web.telegram.org/#/im?p=@antojitos_bot"
     >
