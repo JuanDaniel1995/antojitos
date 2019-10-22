@@ -14,9 +14,6 @@ const Header = () => (
         SHOP
       </div>
       <div className="option" to="/shop">
-        CONTACT
-      </div>
-      <div className="option" to="/shop">
         SIGN IN
       </div>
       <div className="option">
