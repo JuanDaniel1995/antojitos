@@ -7,6 +7,7 @@ import Header from "./components/header/header.component";
 
 const HomePage = lazy(() => import("./pages/homepage/homepage.component"));
 const ShopPage = lazy(() => import("./pages/shop/shop.component"));
+const AuthPage = lazy(() => import("./pages/auth/auth.component"));
 
 const App = () => (
   <>
@@ -16,6 +17,7 @@ const App = () => (
         <Suspense fallback={<Spinner />}>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/shop" component={ShopPage} />
+          <Route exact path="/auth" component={AuthPage} />
         </Suspense>
       </ErrorBoundary>
     </Switch>
