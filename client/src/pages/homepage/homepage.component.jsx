@@ -13,7 +13,7 @@ const HomePage = () => (
       target="_blank"
       rel="noopener noreferrer"
       className="paragraph"
-      href="https://web.telegram.org/#/im?p=@antojitos_bot"
+      href="https://telegram.me/antojitos_bot"
     >
       Telegram
     </a>
