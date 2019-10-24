@@ -47,6 +47,10 @@ bot.on("text", async ctx => {
     case "ask.dish_price":
       const { dish } = parameters.fields;
       const dishSnapshot = await firebase.showDishPrice(dish.stringValue);
+      if (dishSnapshot.empty)
+        return await ctx.reply(
+          "No hemos encontrado el platillo que estás buscando, asegurate de usar el nombre completo"
+        );
       return dishSnapshot.forEach(async doc => {
         await ctx.reply(`El costo es de ${doc.data().price} colones`);
       });
