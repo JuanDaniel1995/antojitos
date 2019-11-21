@@ -1,15 +1,14 @@
 .auth {
-  margin-top: 5vh;
-  height: 90vh;
-  .title {
-    width: 100%;
-    text-align: center;
-    margin: 0;
-  }
-}
-
-@media only screen and (min-width: 480px) and (max-width: 767px) {
-  .auth {
-    height: 85vh;
+  width: 850px;
+  display: flex;
+  justify-content: space-between;
+  margin: 30px auto;
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+    width: unset;
+    align-items: center;
+    > *:first-child {
+      margin-bottom: 50px;
+    }
   }
 }

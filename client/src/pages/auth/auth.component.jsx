@@ -1,10 +1,14 @@
 import React from "react";
 
+import SignIn from "../../components/sign-in/sign-in.component";
+import SignUp from "../../components/sign-up/sign-up.component";
+
 import "./auth.scss";
 
 const AuthPage = () => (
   <div className="auth">
-    <h1 className="title">Antojitos Locos</h1>
+    <SignIn />
+    <SignUp />
   </div>
 );
 
