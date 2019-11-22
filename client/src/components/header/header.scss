@@ -1,5 +1,5 @@
 .header {
-  height: 5vh;
+  height: 10vh;
   width: 100%;
 }
 
@@ -33,7 +33,7 @@
 
 @media only screen and (min-width: 768px) {
   .header {
-    height: 10vh;
+    height: 15vh;
   }
   .options {
     justify-content: space-around;
