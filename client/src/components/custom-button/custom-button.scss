@@ -1,11 +1,9 @@
 .custom-button {
-  min-width: 165px;
-  width: auto;
-  height: 50px;
+  width: 60vw;
+  height: 6vh;
+  margin-top: 1vh;
   letter-spacing: 0.5px;
-  line-height: 50px;
-  padding: 0 35px 0 35px;
-  font-size: 8px;
+  font-size: 10px;
   background-color: black;
   color: white;
   text-transform: uppercase;
@@ -13,12 +11,6 @@
   font-weight: bolder;
   border: none;
   cursor: pointer;
-  display: flex;
-  justify-content: center;
-
-  @media screen and (max-width: 800px) {
-    width: 40%;
-  }
 
   &:hover {
     background-color: white;
@@ -35,16 +27,13 @@
       border: none;
     }
   }
+}
 
-  &.inverted {
-    background-color: white;
-    color: black;
-    border: 1px solid black;
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+}
 
-    &:hover {
-      background-color: black;
-      color: white;
-      border: none;
-    }
+@media only screen and (min-width: 768px) {
+  .custom-button {
+    width: 20vw;
   }
 }

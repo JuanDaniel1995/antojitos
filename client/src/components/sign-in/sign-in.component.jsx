@@ -38,6 +38,7 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
           type="email"
           value={email}
           label="email"
+          className={email ? "shrink" : ""}
           handleChange={handleChange}
           required
         />
@@ -47,6 +48,7 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
           value={password}
           handleChange={handleChange}
           label="password"
+          className={password ? "shrink" : ""}
           required
         />
         <div className="buttons">

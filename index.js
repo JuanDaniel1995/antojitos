@@ -23,7 +23,6 @@ app.post("/whatsapp", async (req, res) => {
     parameters
   } = await chatbot.textQuery(Body);
   const twiml = new MessagingResponse();
-  console.log(displayName);
   switch (displayName) {
     case "welcome":
       await fulfillmentMessages.forEach(async element => {
@@ -40,7 +39,7 @@ app.post("/whatsapp", async (req, res) => {
       res.end(twiml.toString());
       break;
     case "ask.dishes":
-      twiml.message("En un momento te muestro el menu");
+      await twiml.message("En un momento te muestro el menu");
       const dishesSnapshot = await firebase.showDishes();
       await dishesSnapshot.forEach(async doc => {
         return twiml.message(

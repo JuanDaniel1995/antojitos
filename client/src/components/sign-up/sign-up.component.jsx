@@ -42,6 +42,7 @@ const SignUp = ({ signUpStart }) => {
           value={displayName}
           onChange={handleChange}
           label="Display Name"
+          className={displayName ? "shrink" : ""}
           required
         />
         <FormInput
@@ -50,6 +51,7 @@ const SignUp = ({ signUpStart }) => {
           value={email}
           onChange={handleChange}
           label="Email"
+          className={email ? "shrink" : ""}
           required
         />
         <FormInput
@@ -58,6 +60,7 @@ const SignUp = ({ signUpStart }) => {
           value={password}
           onChange={handleChange}
           label="Password"
+          className={password ? "shrink" : ""}
           required
         />
         <FormInput
@@ -66,9 +69,12 @@ const SignUp = ({ signUpStart }) => {
           value={confirmPassword}
           onChange={handleChange}
           label="Confirm Password"
+          className={confirmPassword ? "shrink" : ""}
           required
         />
-        <CustomButton type="submit">SIGN UP</CustomButton>
+        <CustomButton type="submit" style={{ marginBottom: "5vh" }}>
+          SIGN UP
+        </CustomButton>
       </form>
     </div>
   );
