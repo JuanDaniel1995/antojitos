@@ -16,15 +16,15 @@ const Header = ({ currentUser, signOutStart }) => (
         Antojitos
       </Link>
       <Link className="option" to="/shop">
-        Shop
+        Tienda
       </Link>
       {currentUser ? (
         <div className="option" onClick={signOutStart}>
-          Sign out
+          Salir
         </div>
       ) : (
         <Link className="option" to="/auth">
-          Sign in
+          Ingresar
         </Link>
       )}
       <div className="option">

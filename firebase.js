@@ -1,14 +1,7 @@
 const admin = require("firebase-admin");
-const path = require("path");
-const homedir = require("os").homedir();
-const serviceAccount = path.join(
-  homedir,
-  ".keys",
-  "antojitos-b621a-firebase-adminsdk-z1ing-ff30b61f30.json"
-);
 
 admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
+  credential: admin.credential.cert(JSON.parse(process.env.FIREBASE_CONFIG)),
   databaseURL: "https://antojitos-b621a.firebaseio.com"
 });
 

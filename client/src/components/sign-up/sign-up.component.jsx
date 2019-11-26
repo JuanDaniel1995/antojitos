@@ -33,15 +33,15 @@ const SignUp = ({ signUpStart }) => {
 
   return (
     <div className="sign-up">
-      <h2 className="title">I do not have an account</h2>
-      <span>Sign up with your email and password</span>
+      <h2 className="title">Crear cuenta</h2>
+      <span>Crear cuenta con correo y contraseña</span>
       <form className="sign-up-form" onSubmit={handleSubmit}>
         <FormInput
           type="text"
           name="displayName"
           value={displayName}
           onChange={handleChange}
-          label="Display Name"
+          label="Nombre"
           className={displayName ? "shrink" : ""}
           required
         />
@@ -50,7 +50,7 @@ const SignUp = ({ signUpStart }) => {
           name="email"
           value={email}
           onChange={handleChange}
-          label="Email"
+          label="Correo electrónico"
           className={email ? "shrink" : ""}
           required
         />
@@ -59,7 +59,7 @@ const SignUp = ({ signUpStart }) => {
           name="password"
           value={password}
           onChange={handleChange}
-          label="Password"
+          label="Contraseña"
           className={password ? "shrink" : ""}
           required
         />
@@ -73,7 +73,7 @@ const SignUp = ({ signUpStart }) => {
           required
         />
         <CustomButton type="submit" style={{ marginBottom: "5vh" }}>
-          SIGN UP
+          Crear cuenta
         </CustomButton>
       </form>
     </div>

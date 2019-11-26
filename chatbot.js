@@ -1,14 +1,7 @@
 const dialogflow = require("dialogflow");
-const path = require("path");
-const homedir = require("os").homedir();
-const serviceAccount = path.join(
-  homedir,
-  ".keys",
-  "antojitos-b621a-2e647887bf83.json"
-);
 
 const sessionClient = new dialogflow.SessionsClient({
-  keyFilename: serviceAccount
+  credentials: JSON.parse(process.env.DIALOGFLOW_CONFIG)
 });
 const sessionPath = sessionClient.sessionPath(
   process.env.GOOGLE_PROJECT_ID,
