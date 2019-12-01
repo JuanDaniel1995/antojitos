@@ -1,5 +1,7 @@
 import { takeLatest, put, all, call } from "redux-saga/effects";
 
+import { toast } from "react-toastify";
+
 import UserActionTypes from "./user.types";
 
 import {
@@ -30,6 +32,17 @@ export function* getSnapshotFromUserAuth(userAuth, additionalData) {
   } catch (error) {
     yield put(signInFailure(error));
   }
+}
+
+export function* signInFailed({ payload: { message } }) {
+  yield toast.error(message, {
+    position: "top-center",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true
+  });
 }
 
 export function* signInWithGoogle() {
@@ -86,6 +99,10 @@ export function* onEmailSignInStart() {
   yield takeLatest(UserActionTypes.EMAIL_SIGN_IN_START, signInWithEmail);
 }
 
+export function* onSignInFailure() {
+  yield takeLatest(UserActionTypes.SIGN_IN_FAILURE, signInFailed);
+}
+
 export function* onGoogleSignInStart() {
   yield takeLatest(UserActionTypes.GOOGLE_SIGN_IN_START, signInWithGoogle);
 }
@@ -113,6 +130,7 @@ export function* userSagas() {
     call(isUserAuthenticated),
     call(onSignOutStart),
     call(onSignUpStart),
-    call(onSignUpSuccess)
+    call(onSignUpSuccess),
+    call(onSignInFailure)
   ]);
 }
