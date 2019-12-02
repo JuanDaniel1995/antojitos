@@ -9,6 +9,7 @@
 
   .buttons {
     width: 90vw;
+    min-height: 30%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -24,6 +25,7 @@
     }
     .buttons {
       display: flex;
+      height: 30%;
       flex-direction: row;
       align-items: center;
       justify-content: space-around;

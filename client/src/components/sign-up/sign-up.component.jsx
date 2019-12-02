@@ -68,13 +68,15 @@ const SignUp = ({ signUpStart }) => {
           name="confirmPassword"
           value={confirmPassword}
           onChange={handleChange}
-          label="Confirm Password"
+          label="Confirmar contraseña"
           className={confirmPassword ? "shrink" : ""}
           required
         />
-        <CustomButton type="submit" style={{ marginBottom: "5vh" }}>
-          Crear cuenta
-        </CustomButton>
+        <div className="buttons">
+          <CustomButton type="submit" style={{ marginBottom: "5vh" }}>
+            Crear cuenta
+          </CustomButton>
+        </div>
       </form>
     </div>
   );

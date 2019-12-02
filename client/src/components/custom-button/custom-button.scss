@@ -1,6 +1,6 @@
 .custom-button {
   width: 60vw;
-  height: 6vh;
+  height: 10vw;
   margin-top: 1vh;
   letter-spacing: 0.5px;
   font-size: 10px;
@@ -29,17 +29,16 @@
   }
 }
 
-@media only screen and (max-height: 480px) {
-  button.custom-button {
-    height: 12vh;
-  }
-}
-
 @media only screen and (min-width: 480px) and (max-width: 767px) {
+  .custom-button {
+    width: 20vw;
+    height: 6vh;
+  }
 }
 
 @media only screen and (min-width: 768px) {
   .custom-button {
     width: 20vw;
+    height: 8vh;
   }
 }

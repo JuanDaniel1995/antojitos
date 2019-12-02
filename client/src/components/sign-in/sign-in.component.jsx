@@ -37,7 +37,7 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
           name="email"
           type="email"
           value={email}
-          label="email"
+          label="Correo electrónico"
           className={email ? "shrink" : ""}
           handleChange={handleChange}
           required
@@ -47,7 +47,7 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
           type="password"
           value={password}
           handleChange={handleChange}
-          label="password"
+          label="Contraseña"
           className={password ? "shrink" : ""}
           required
         />
