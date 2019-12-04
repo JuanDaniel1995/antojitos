@@ -1,11 +1,33 @@
-import React from "react";
+import React, { useEffect, lazy, Suspense } from "react";
+import { connect } from "react-redux";
 
-import "./shop.scss";
+import Spinner from "../../components/spinner/spinner.component";
 
-const ShopPage = () => (
-  <div className="shop">
-    <h1 className="title">Antojitos Locos</h1>
-  </div>
+import { fetchDishesStart } from "../../redux/shop/shop.actions";
+
+const DishesOverview = lazy(() =>
+  import("../../components/dishes-overview/dishes-overview.component")
 );
 
-export default ShopPage;
+const ShopPage = ({ fetchDishesStart }) => {
+  useEffect(() => {
+    fetchDishesStart();
+  }, [fetchDishesStart]);
+
+  return (
+    <div className="shop">
+      <Suspense fallback={<Spinner />}>
+        <DishesOverview />
+      </Suspense>
+    </div>
+  );
+};
+
+const mapDispatchToProps = dispatch => ({
+  fetchDishesStart: () => dispatch(fetchDishesStart())
+});
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(ShopPage);
