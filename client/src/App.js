@@ -15,6 +15,7 @@ import { checkUserSession } from "./redux/user/user.actions";
 const HomePage = lazy(() => import("./pages/homepage/homepage.component"));
 const ShopPage = lazy(() => import("./pages/shop/shop.component"));
 const AuthPage = lazy(() => import("./pages/auth/auth.component"));
+const ProfilePage = lazy(() => import("./pages/profile/profile.component"));
 
 const App = ({ checkUserSession, currentUser }) => {
   useEffect(() => {
@@ -28,6 +29,7 @@ const App = ({ checkUserSession, currentUser }) => {
           <Suspense fallback={<Spinner />}>
             <Route exact path="/" component={HomePage} />
             <Route exact path="/shop" component={ShopPage} />
+            <Route exact path="/profile" component={ProfilePage} />
             <Route
               exact
               path="/auth"
