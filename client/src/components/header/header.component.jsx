@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
-import { ReactComponent as ShoppingIcon } from "../../assets/shopping-bag.svg";
 import { selectCurrentUser } from "../../redux/user/user.selectors";
 import { signOutStart } from "../../redux/user/user.actions";
 
@@ -18,6 +17,11 @@ const Header = ({ currentUser, signOutStart }) => (
       <Link className="option" to="/shop">
         Tienda
       </Link>
+      {currentUser && (
+        <Link className="option" to="/profile">
+          Pérfil
+        </Link>
+      )}
       {currentUser ? (
         <div className="option" onClick={signOutStart}>
           Salir
@@ -27,9 +31,6 @@ const Header = ({ currentUser, signOutStart }) => (
           Ingresar
         </Link>
       )}
-      <div className="option">
-        <ShoppingIcon className="shopping-icon" />
-      </div>
     </div>
   </div>
 );

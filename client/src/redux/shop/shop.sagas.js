@@ -8,7 +8,6 @@ import { fetchDishesSuccess, fetchDishesFailure } from "./shop.actions";
 
 export function* fetchDishes() {
   try {
-    console.log("Hi");
     const dishRef = firestore.collection("dishes");
     const dishesSnapshot = yield dishRef.get();
     const dishes = dishesSnapshot.docs.map(docSnapshot => {
