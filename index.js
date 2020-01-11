@@ -56,11 +56,14 @@ app.post("/whatsapp", async (req, res) => {
         break;
       case "ask.dishes":
         const dishesSnapshot = await firebase.showDishes();
-        dishesSnapshot.forEach(doc => {
-          twiml.message(
+        let message = "";
+        await dishesSnapshot.forEach(async doc => {
+          message = message.concat(
             `${doc.data().displayName} a ${doc.data().price} colones`
           );
+          message = message.concat("\n");
         });
+        twiml.message(message);
         res.writeHead(200, { "Content-Type": "text/xml" });
         res.end(twiml.toString());
         break;
@@ -116,11 +119,14 @@ bot.on("text", async ctx => {
       break;
     case "ask.dishes":
       const dishesSnapshot = await firebase.showDishes();
-      return dishesSnapshot.forEach(async doc => {
-        await ctx.reply(
+      let message = "";
+      await dishesSnapshot.forEach(async doc => {
+        message = message.concat(
           `${doc.data().displayName} a ${doc.data().price} colones`
         );
+        message = message.concat("\n");
       });
+      ctx.reply(message);
       break;
     case "ask.dish_price":
       const { dish } = parameters.fields;
