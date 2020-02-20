@@ -9,29 +9,35 @@ import { signOutStart } from "../../redux/user/user.actions";
 import "./header.scss";
 
 const Header = ({ currentUser, signOutStart }) => (
-  <div className="header">
-    <div className="options">
-      <Link className="option" to="/">
-        Antojitos
-      </Link>
-      <Link className="option" to="/shop">
-        Tienda
-      </Link>
+  <div className="top-bar">
+    <ul className="menu top-bar-left">
+      <li>
+        <h1>
+          <Link to="/">Antojitos</Link>
+        </h1>
+      </li>
+    </ul>
+    <ul className="menu top-bar-right">
+      <li>
+        <Link to="/shop">Tienda</Link>
+      </li>
       {currentUser && (
-        <Link className="option" to="/profile">
-          Pérfil
-        </Link>
+        <li>
+          <Link to="/profile">Pérfil</Link>
+        </li>
       )}
       {currentUser ? (
-        <div className="option" onClick={signOutStart}>
-          Salir
-        </div>
+        <li>
+          <Link to="#" onClick={signOutStart}>
+            Salir
+          </Link>
+        </li>
       ) : (
-        <Link className="option" to="/auth">
-          Ingresar
-        </Link>
+        <li>
+          <Link to="/auth">Ingresar</Link>
+        </li>
       )}
-    </div>
+    </ul>
   </div>
 );
 const mapStateToProps = createStructuredSelector({

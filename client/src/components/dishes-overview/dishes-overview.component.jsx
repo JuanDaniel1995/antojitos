@@ -17,9 +17,11 @@ const DishesOverview = ({ dishes, isLoading }) => {
   ) : (
     <>
       {dishes.map(({ id, displayName, price }) => (
-        <p key={id} style={{ textAlign: "center" }}>
-          {displayName} a {price} colones
-        </p>
+        <div key={id} className="callout large">
+          <h4>{displayName}</h4>
+          <p key={id}>Precio: {price} colones</p>
+          <a href="#">Ordenar</a>
+        </div>
       ))}
     </>
   );

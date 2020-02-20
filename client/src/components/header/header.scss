@@ -1,44 +1,13 @@
-.header {
-  height: 10vh;
-  width: 100vw;
-}
-
-.options {
-  height: 100%;
+.top-bar {
   display: flex;
-  width: 100%;
-  justify-content: space-between;
+  flex-basis: 50%;
+  background-color: rgb(60, 179, 113);
 }
 
-.option {
-  display: flex;
-  height: 100%;
-  font-size: 20px;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  color: black;
-  cursor: pointer;
+.top-bar ul {
+  background-color: rgb(60, 179, 113);
 }
 
-.shopping-icon {
-  height: 60%;
-}
-
-@media only screen and (min-width: 480px) and (max-width: 767px) {
-  .header {
-    height: 10vh;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .header {
-    height: 15vh;
-  }
-  .options {
-    justify-content: space-around;
-  }
-  .option {
-    font-size: 24px;
-  }
+.top-bar a {
+  color: rgb(255, 255, 255);
 }

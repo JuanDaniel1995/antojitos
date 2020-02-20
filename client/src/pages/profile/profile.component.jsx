@@ -48,7 +48,7 @@ const ProfilePage = ({ currentUser: { displayName, email, phone } }) => {
         />
         <FormInput
           name="phone"
-          type="number"
+          type="phone"
           defaultValue={phone}
           label="Número teléfonico"
           className={phone ? "shrink" : ""}

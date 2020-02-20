@@ -1,44 +1,7 @@
-.custom-button {
-  width: 60vw;
-  height: 10vw;
-  margin-top: 1vh;
-  letter-spacing: 0.5px;
-  font-size: 10px;
-  background-color: black;
-  color: white;
-  text-transform: uppercase;
-  font-family: "Open Sans Condensed";
-  font-weight: bolder;
-  border: none;
-  cursor: pointer;
-
-  &:hover {
-    background-color: white;
-    color: black;
-    border: 1px solid black;
-  }
-
-  &.google-sign-in {
-    background-color: #4285f4;
-    color: white;
-
-    &:hover {
-      background-color: #357ae8;
-      border: none;
-    }
-  }
+.button {
+  background-color: rgb(60, 179, 113);
 }
 
-@media only screen and (min-width: 480px) and (max-width: 767px) {
-  .custom-button {
-    width: 20vw;
-    height: 6vh;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .custom-button {
-    width: 20vw;
-    height: 8vh;
-  }
+.button:hover {
+  background-color: rgb(0, 181, 26);
 }
